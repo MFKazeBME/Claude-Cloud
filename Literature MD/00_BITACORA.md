@@ -60,3 +60,7 @@
 | 2026-11-05 04:02 | Judex2010_MicroCT_Adiposity_Rodents | prep | páginas 1-13 |
 | 2026-11-05 04:07 | Judex2010_MicroCT_Adiposity_Rodents | qc | PASS completo cob 0.9972 prec 0.9965 |
 | 2026-11-05 04:09 | Judex2010_MicroCT_Adiposity_Rodents | done COMPLETO | QC PASS completo (pdf2md_tools 1.3-cloud, primera vuelta): cob 0.9972, prec 0.9965, figuras 4/4 (nativas), tablas 0/0, ecuaciones 0/0, KaTeX 6/6, sin fallas ni avisos ni pasajes faltantes o añadidos. Manuscrito de autor NIH (PMC): rótulo NIH-PA y recuadro de cabecera registrados en el marcador de la |
+| 2026-11-05 04:13 | Gerbaix2010_VisceralFat_DXA_Anthropometry_Rats | qc | PASS completo cob 0.9994 prec 0.9967 |
+| 2026-11-05 04:13 | Gerbaix2010_VisceralFat_DXA_Anthropometry_Rats | done COMPLETO | QC PASS completo (pdf2md_tools 1.3-cloud): cob 0.9994, prec 0.9967, tablas 5/5, KaTeX 3/3, sin fallas ni avisos. 'figuras 4/3' porque el qc no detecta en el PDF la leyenda de la Figure 4 (p. 7, mismo bloque que el rótulo B); el .md tiene las 4 figuras. Títulos y volúmenes de las referencias marcados |
+| 2026-11-05 04:13 | Kunnecke2004_MR_Relaxometry_MiceRats | lock | Claude Code |
+| 2026-11-05 04:14 | Kunnecke2004_MR_Relaxometry_MiceRats | prep | páginas 1-12 |
