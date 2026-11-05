@@ -28,3 +28,5 @@
 | 2026-11-05 03:03 | Bland1986_AgreementTwoMethods | done COMPLETO | AVISO justificado (cob 0.9804, prec 0.9592, sin pasajes faltantes ni añadidos, KaTeX 24/24). Números del MD ausentes en el PDF: las 63 celdas de la tabla (la capa OCR no contiene la tabla; verificadas a 400 dpi), '001' (capa 'O. 00 I' por 0·001), '21' y '33' (capa lee 21.6 y 33.2 como decimales; imp |
 | 2026-11-05 03:04 | Bernardis1968_LeeIndex_CarcassFat | qc | AVISO completo cob 0.9819 prec 0.9773 |
 | 2026-11-05 03:04 | Bertin1998_DXA_Evaluation_Rats | qc | AVISO completo cob 0.9699 prec 0.9864 |
+| 2026-11-05 03:05 | Feely2000_Chemical_vs_DXA_Rats | lock | Claude Code |
+| 2026-11-05 03:05 | Feely2000_Chemical_vs_DXA_Rats | prep | páginas 1-13 |
