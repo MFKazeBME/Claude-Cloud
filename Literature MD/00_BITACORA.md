@@ -94,3 +94,9 @@
 | 2026-11-05 05:20 | Novelli2007_AnthropometricalParameters_Rats | prep | páginas 1-9 |
 | 2026-11-05 05:31 | Novelli2007_AnthropometricalParameters_Rats | qc | FALLA completo cob 0.9260 prec 0.9053 |
 | 2026-11-05 05:34 | Novelli2007_AnthropometricalParameters_Rats | done COMPLETO | [forzado] Cierre con --forzar ante FALLA por falso positivo comprobado (qc 1.3-cloud: cob 0.9260, prec 0.9053, fig 5/5, tab 3/3, ec 0/0, KaTeX 4/4; 0 pasajes faltantes, 0 añadidos, 0 números del .md ausentes del PDF). Causa: fuentes de símbolos con codificación propia en la capa (± como '7', = como  |
+| 2026-11-05 05:37 | Ronneberger2015_UNet | lock | Claude Code |
+| 2026-11-05 05:37 | Ronneberger2015_UNet | prep | páginas 1-8 |
+| 2026-11-05 05:37 | Lin1989_ConcordanceCorrelationCoefficient | qc | FALLA completo cob 0.9150 prec 0.9307 |
+| 2026-11-05 05:38 | Lin1989_ConcordanceCorrelationCoefficient | done COMPLETO | [forzado] Falso positivo comprobado: la única FALLA del qc es 1 pasaje faltante en p6 ('tanh kc 2 ln 1 pc 1 pc ln 1 pc l pc'), que es la capa OCR desordenada de la ecuación en display Z-hat = tanh^-1(rho-hat_c) = 1/2 ln[(1 + rho-hat_c)/(1 - rho-hat_c)] y de la expresión en línea Z = 1/2 ln[(1 + rho_ |
+| 2026-11-05 05:43 | Ronneberger2015_UNet | qc | PASS completo cob 0.9916 prec 0.9941 |
+| 2026-11-05 05:45 | Ronneberger2015_UNet | done COMPLETO | qc PASS sin avisos (1.3-cloud: cob 0.9916, prec 0.9941, fig 4/4, tab 2/2, ec 2/2, KaTeX 25/25). Preprint arXiv v1 (tipo preprint en el YAML). Figuras recortadas a 600 dpi y tablas a 400 dpi; límites de las tablas tomados de sus reglas porque las propuestas de recorte del manifest terminaban en el en |

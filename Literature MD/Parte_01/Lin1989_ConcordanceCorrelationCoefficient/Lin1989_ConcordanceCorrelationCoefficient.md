@@ -18,8 +18,8 @@ conversion:
   metodo: "imagen escaneada de 600 dpi como fuente principal (capa OCR solo de apoyo) + verificación visual página por página + zoom de 300 a 600 dpi en todo el texto, las ecuaciones, las seis tablas con sus notas, las leyendas y las referencias"
   herramienta: "pdf2md_tools 1.3-cloud"
   instruccion: "00_INSTRUCCION_PDF_a_MD.txt v1.0"
-  verificacion: "páginas 1-15 revisadas contra la imagen; zoom a 200 dpi en la portada de JSTOR (página 1); zoom a 300-500 dpi en todo el texto de las páginas 2 a 15 (encabezados, párrafos, leyendas, notas de tabla, Résumé y referencias); zoom a 400-600 dpi en todas las ecuaciones en display y en línea (páginas 4 a 7 y 13 a 15) y en las matrices de los Cases 1 a 5; zoom a 400-600 dpi celda por celda en las Tablas 1 a 6 y sus notas; zoom a 600 dpi en la notación 45° con subíndice o, en '.017:' (página 7), en 'It est simple' (página 13), en los volúmenes en negrita de las referencias y en los rótulos 45° y H₀ de las Figs. 1 a 3; las cinco figuras revisadas a 600 dpi; render pandoc + KaTeX en Chromium revisado (0 errores de KaTeX; tablas, rowspan/colspan, notas y figuras correctas)"
-  qc: "FALLA por un falso positivo comprobado (cerrado con --forzar) · cobertura 0.915 · precisión 0.9307 · figuras 5/5 · tablas 6/6 · ecuaciones 2/1 (la capa OCR no deja detectar (2)) · KaTeX 294 expresiones sin error · única falla: 1 pasaje faltante en p6 ('tanh kc 2 ln 1 pc 1 pc ln 1 pc l pc'), que es la capa OCR desordenada de la ecuación en display Ẑ = tanh⁻¹(ρ̂c) = ½ ln[(1 + ρ̂c)/(1 − ρ̂c)] y de la expresión en línea Z = ½ ln[(1 + ρc)/(1 − ρc)], ambas transcritas en LaTeX ('kc' y 'pc' son ρ̂c y ρc, 'l' es 1) · avisos justificados: número '11' del .md (Y₁₁ del Apéndice, la capa OCR lee 'Yl'); 14 números del PDF ausentes ('00', '02', '04', '9.95', '072', '72', '82', '91', '92', '0212', '450', '712', '0712', '20712'), todos basura de la capa OCR en ecuaciones, matrices y figuras ('450' por 45°, '04 1' por −.041, 'V72' por √.25, '0712' por σ₁², etc.)"
+  verificacion: "páginas 1-15 revisadas contra la imagen; zoom a 200 dpi en la portada de JSTOR (página 1); zoom a 300-500 dpi en todo el texto de las páginas 2 a 15 (encabezados, párrafos, leyendas, notas de tabla, Résumé y referencias); zoom a 400-600 dpi en todas las ecuaciones en display y en línea (páginas 4 a 7 y 13 a 15) y en las matrices de los Cases 1 a 5; zoom a 400-600 dpi celda por celda en las Tablas 1 a 6 y sus notas; zoom a 600 dpi en la notación 45° con subíndice o, en '.017:' (página 7), en 'It est simple' (página 13), en los volúmenes en negrita de las referencias y en los rótulos 45° y H₀ de las Figs. 1 a 3; las cinco figuras revisadas a 600 dpi; render pandoc + KaTeX en Chromium revisado (0 errores de KaTeX; tablas, rowspan/colspan, notas y figuras correctas); verificación independiente posterior: 9 hallazgos confirmados y corregidos (página 5: etiquetas (i), (ii), (iii), (iv), (a), (b) y (c) escritas como \\( para que pandoc no las convierta en listas <ol> ni pierda los paréntesis; página 10: etiquetas (1) y (2), mismo escape; confirmado con zoom a 400 dpi y con pandoc, que ahora da 0 listas)"
+  qc: "FALLA por un falso positivo comprobado (cerrado con --forzar; qc de 2026-11-05 05:37, después de la verificación independiente) · cobertura 0.915 · precisión 0.9307 (PASS para escaneados) · figuras 5/5 · tablas 6/6 · ecuaciones 2/1 (la capa OCR no deja detectar (2)) · KaTeX 294 expresiones sin error · palabras PDF 4459 / MD 4428 · única falla: 1 pasaje faltante en p6 ('tanh kc 2 ln 1 pc 1 pc ln 1 pc l pc'), que es la capa OCR desordenada de la ecuación en display Ẑ = tanh⁻¹(ρ̂c) = ½ ln[(1 + ρ̂c)/(1 − ρ̂c)] y de la expresión en línea Z = ½ ln[(1 + ρc)/(1 − ρc)], ambas transcritas en LaTeX ('kc' y 'pc' son ρ̂c y ρc, 'l' es 1) · avisos justificados: número '11' del .md (Y₁₁ del Apéndice, la capa OCR lee 'Yl'); 14 números del PDF ausentes ('00', '02', '04', '9.95', '72', '072', '82', '91', '92', '0212', '450', '0712', '712', '20712'), todos basura de la capa OCR en ecuaciones, matrices y figuras ('450' por 45°, '04 1' por −.041, 'V72' por √.25, '0712' por σ₁², etc.)"
 notas_fidelidad:
   - "PDF de JSTOR: la página 1 es la portada que añade JSTOR (texto digital) y las páginas 2 a 15 son el artículo escaneado (una imagen de 4200×6200 px por página, 600 dpi) con capa OCR invisible. El texto de las páginas 2 a 15 se transcribió desde la imagen; la capa OCR solo se usó como apoyo (no sirve en ecuaciones, fórmulas ni rótulos de tabla)."
   - "Portada de JSTOR (página 1): se transcribe como cuerpo de esa página, campo por campo; no se guardan los logotipos de la International Biometric Society ni de JSTOR. La capa de texto añade ' .' invisibles después de 'stable/2532051', de 'available at' y en dos líneas vacías; no están impresos y se omiten. URL y correo se transcriben como texto, sin enlace."
@@ -165,19 +165,19 @@ $$
 
 This concordance correlation coefficient, $\rho_\mathrm{c}$, possesses the following characteristics:
 
-(i) $-1 \leqslant -\lvert \rho \rvert \leqslant \rho_\mathrm{c} \leqslant \lvert \rho \rvert \leqslant 1$.
+\(i) $-1 \leqslant -\lvert \rho \rvert \leqslant \rho_\mathrm{c} \leqslant \lvert \rho \rvert \leqslant 1$.
 
-(ii) $\rho_\mathrm{c} = 0$ if and only if $\rho = 0$.
+\(ii) $\rho_\mathrm{c} = 0$ if and only if $\rho = 0$.
 
-(iii) $\rho_\mathrm{c} = \rho$ if and only if $\sigma_1 = \sigma_2$ and $\mu_1 = \mu_2$.
+\(iii) $\rho_\mathrm{c} = \rho$ if and only if $\sigma_1 = \sigma_2$ and $\mu_1 = \mu_2$.
 
-(iv) $\rho_\mathrm{c} = \pm 1$ if and only if
+\(iv) $\rho_\mathrm{c} = \pm 1$ if and only if
 
-(a) $(\mu_1 - \mu_2)^2 + (\sigma_1 - \sigma_2)^2 + 2\sigma_1\sigma_2(1 \mp \rho) = 0$, or equivalently,
+\(a) $(\mu_1 - \mu_2)^2 + (\sigma_1 - \sigma_2)^2 + 2\sigma_1\sigma_2(1 \mp \rho) = 0$, or equivalently,
 
-(b) $\rho = \pm 1$, $\sigma_1 = \sigma_2$, and $\mu_1 = \mu_2$, or equivalently,
+\(b) $\rho = \pm 1$, $\sigma_1 = \sigma_2$, and $\mu_1 = \mu_2$, or equivalently,
 
-(c) each pair of readings is in perfect (1) agreement (for example, 1, 1; 2, 2; 3, 3; 4, 4; 5, 5) or in perfect reversed (−1) agreement (for example, 5, 1; 4, 2; 3, 3; 2, 4; 1, 5).
+\(c) each pair of readings is in perfect (1) agreement (for example, 1, 1; 2, 2; 3, 3; 4, 4; 5, 5) or in perfect reversed (−1) agreement (for example, 5, 1; 4, 2; 3, 3; 2, 4; 1, 5).
 
 This concordance correlation coefficient evaluates the degree to which pairs fall on the $45^\circ_\mathrm{o}$ line. It contains the measurements of accuracy ($C_\mathrm{b}$) and precision ($\rho$). Any departure from this line would produce $\rho_\mathrm{c} \lt 1$ even if $\rho = 1$.
 
@@ -430,9 +430,9 @@ The asymptotic normality of $\hat{\rho}_\mathrm{c}$ and $\hat{Z}$ for samples fr
 
 Two examples are considered that investigate the following two questions:
 
-(1) Can a “Portable \$ave” machine (actual name withheld) reproduce a gold-standard machine in measuring total bilirubin in blood?
+\(1) Can a “Portable \$ave” machine (actual name withheld) reproduce a gold-standard machine in measuring total bilirubin in blood?
 
-(2) Can an *in-vitro* assay for screening the toxicity of biomaterials reproduce from trial to trial? [This example uses part of the data from Johnson et al. (1985). The two assays in this example are the best and the worst in terms of reproducibility, respectively, in that data set.]
+\(2) Can an *in-vitro* assay for screening the toxicity of biomaterials reproduce from trial to trial? [This example uses part of the data from Johnson et al. (1985). The two assays in this example are the best and the worst in terms of reproducibility, respectively, in that data set.]
 
 To study the first question, blood samples were taken from 10 animals, one sample per animal. Each sample was measured for bilirubin level by three operators using a Portable \$ave machine and a gold-standard Hitachi machine. The salesman of the Portable \$ave machine claimed that it can reproduce the results measured by the Hitachi machine, and that “anyone on your staff can run tests.” Therefore, this study was conducted at Baxter by three operators. One was a well-trained medical technician in the laboratory (denoted by M.T.); one was a staff nurse who represented the targeted personnel to operate this machine with minimal training (denoted by Nurse); and one was a temporary summer trainee with no training who was the son of a vice president of the laboratory (denoted by S-VP).
 
