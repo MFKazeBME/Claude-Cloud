@@ -54,3 +54,9 @@
 | 2026-11-05 03:54 | Jebb1996_DXA_GrossBodyComposition_Rats | qc | AVISO completo cob 0.9772 prec 0.9835 |
 | 2026-11-05 03:56 | Jebb1996_DXA_GrossBodyComposition_Rats | qc | AVISO completo cob 0.9772 prec 0.9835 |
 | 2026-11-05 03:57 | Jebb1996_DXA_GrossBodyComposition_Rats | done COMPLETO | AVISO justificado (qc 1.3-cloud completo: cob 0.9772, prec 0.9835, figuras 5/5, KaTeX 5/5, sin fallas ni pasajes faltantes o añadidos). Únicos avisos: números. 32 números del .md 'ausentes' del PDF y 60 del PDF 'ausentes' del .md: todos se deben al punto medio decimal impreso (la capa OCR lo lee com |
+| 2026-11-05 04:01 | Folch1957_TotalLipidesIsolation | qc | FALLA completo cob 0.9242 prec 0.9250 |
+| 2026-11-05 04:01 | Folch1957_TotalLipidesIsolation | done COMPLETO | [forzado] [forzado] Cierre con --forzar ante FALLA por falso positivo comprobado (capa OCR). Cobertura 0.9242 y precisión 0.925 (umbral PASS de escaneados 0.90), sin pasajes faltantes. Los 3 pasajes 'añadidos' son texto impreso verificado con zoom a 600 dpi que la capa OCR no tiene o lee mal: última |
+| 2026-11-05 04:02 | Judex2010_MicroCT_Adiposity_Rodents | lock | Claude Code |
+| 2026-11-05 04:02 | Judex2010_MicroCT_Adiposity_Rodents | prep | páginas 1-13 |
+| 2026-11-05 04:07 | Judex2010_MicroCT_Adiposity_Rodents | qc | PASS completo cob 0.9972 prec 0.9965 |
+| 2026-11-05 04:09 | Judex2010_MicroCT_Adiposity_Rodents | done COMPLETO | QC PASS completo (pdf2md_tools 1.3-cloud, primera vuelta): cob 0.9972, prec 0.9965, figuras 4/4 (nativas), tablas 0/0, ecuaciones 0/0, KaTeX 6/6, sin fallas ni avisos ni pasajes faltantes o añadidos. Manuscrito de autor NIH (PMC): rótulo NIH-PA y recuadro de cabecera registrados en el marcador de la |
