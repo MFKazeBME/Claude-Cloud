@@ -83,3 +83,10 @@
 | 2026-11-05 05:07 | Lin1989_ConcordanceCorrelationCoefficient | qc | FALLA completo cob 0.9150 prec 0.9307 |
 | 2026-11-05 05:07 | Lin1989_ConcordanceCorrelationCoefficient | done COMPLETO | [forzado] Falso positivo comprobado: la única FALLA del qc es 1 pasaje faltante en p6 ('tanh kc 2 ln 1 pc 1 pc ln 1 pc l pc'), que es la capa OCR desordenada de la ecuación en display Z-hat = tanh^-1(rho-hat_c) = 1/2 ln[(1 + rho-hat_c)/(1 - rho-hat_c)] y de la expresión en línea Z = 1/2 ln[(1 + rho_ |
 | 2026-11-05 05:07 | Lee1929_SurfaceAreaWhiteRat | qc | AVISO completo cob 0.9749 prec 0.9607 |
+| 2026-11-05 05:08 | Lee1929_SurfaceAreaWhiteRat | done COMPLETO | AVISO justificado (qc 1.3-cloud completo, 2026-11-05 05:07: cob 0.9749, prec 0.9607, figuras 1/1, tablas 1/0 por no detectar la etiqueta en la capa OCR, ecuaciones 4/3 por no detectar (1) en la capa, KaTeX 11/11, sin fallas ni pasajes faltantes o añadidos). Únicos avisos: números, todos por errores  |
+| 2026-11-05 05:08 | Nixon2010_QMR_Evaluation_Rodents | lock | Claude Code |
+| 2026-11-05 05:08 | Nixon2010_QMR_Evaluation_Rodents | prep | páginas 1-14 |
+| 2026-11-05 05:16 | Nixon2010_QMR_Evaluation_Rodents | qc | FALLA completo cob 0.9966 prec 0.9944 |
+| 2026-11-05 05:16 | Nixon2010_QMR_Evaluation_Rodents | qc | PASS completo cob 0.9996 prec 0.9988 |
+| 2026-11-05 05:19 | Nixon2010_QMR_Evaluation_Rodents | qc | PASS completo cob 0.9996 prec 0.9988 |
+| 2026-11-05 05:19 | Nixon2010_QMR_Evaluation_Rodents | done COMPLETO | qc PASS sin avisos (cob 0.9996, prec 0.9988, fig 3/3, tab 3/2: la tercera tabla del .md es la lista de abreviaturas en dos columnas). Tabla 2 apaisada: recorte girado 90° en sentido horario. |
