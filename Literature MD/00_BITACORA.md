@@ -49,3 +49,8 @@
 | 2026-11-05 03:44 | Gerbaix2010_VisceralFat_DXA_Anthropometry_Rats | qc | PASS completo cob 0.9994 prec 0.9967 |
 | 2026-11-05 03:45 | Gerbaix2010_VisceralFat_DXA_Anthropometry_Rats | qc | PASS completo cob 0.9994 prec 0.9967 |
 | 2026-11-05 03:45 | Gerbaix2010_VisceralFat_DXA_Anthropometry_Rats | done COMPLETO | QC PASS completo (pdf2md_tools 1.3-cloud): cob 0.9994, prec 0.9967, tablas 5/5, KaTeX 3/3, sin fallas ni avisos. 'figuras 4/3' porque el qc no detecta en el PDF la leyenda de la Figure 4 (p. 7, mismo bloque que el rótulo B); el .md tiene las 4 figuras. Títulos y volúmenes de las referencias marcados |
+| 2026-11-05 03:46 | Jebb1996_DXA_GrossBodyComposition_Rats | lock | Claude Code |
+| 2026-11-05 03:46 | Jebb1996_DXA_GrossBodyComposition_Rats | prep | páginas 1-7 |
+| 2026-11-05 03:54 | Jebb1996_DXA_GrossBodyComposition_Rats | qc | AVISO completo cob 0.9772 prec 0.9835 |
+| 2026-11-05 03:56 | Jebb1996_DXA_GrossBodyComposition_Rats | qc | AVISO completo cob 0.9772 prec 0.9835 |
+| 2026-11-05 03:57 | Jebb1996_DXA_GrossBodyComposition_Rats | done COMPLETO | AVISO justificado (qc 1.3-cloud completo: cob 0.9772, prec 0.9835, figuras 5/5, KaTeX 5/5, sin fallas ni pasajes faltantes o añadidos). Únicos avisos: números. 32 números del .md 'ausentes' del PDF y 60 del PDF 'ausentes' del .md: todos se deben al punto medio decimal impreso (la capa OCR lo lee com |
