@@ -64,3 +64,8 @@
 | 2026-11-05 04:13 | Gerbaix2010_VisceralFat_DXA_Anthropometry_Rats | done COMPLETO | QC PASS completo (pdf2md_tools 1.3-cloud): cob 0.9994, prec 0.9967, tablas 5/5, KaTeX 3/3, sin fallas ni avisos. 'figuras 4/3' porque el qc no detecta en el PDF la leyenda de la Figure 4 (p. 7, mismo bloque que el rótulo B); el .md tiene las 4 figuras. Títulos y volúmenes de las referencias marcados |
 | 2026-11-05 04:13 | Kunnecke2004_MR_Relaxometry_MiceRats | lock | Claude Code |
 | 2026-11-05 04:14 | Kunnecke2004_MR_Relaxometry_MiceRats | prep | páginas 1-12 |
+| 2026-11-05 04:27 | Kunnecke2004_MR_Relaxometry_MiceRats | qc | FALLA completo cob 0.9894 prec 0.9923 |
+| 2026-11-05 04:30 | Jebb1996_DXA_GrossBodyComposition_Rats | qc | AVISO completo cob 0.9772 prec 0.9835 |
+| 2026-11-05 04:30 | Jebb1996_DXA_GrossBodyComposition_Rats | done COMPLETO | AVISO justificado (qc 1.3-cloud completo: cob 0.9772, prec 0.9835, figuras 5/5, KaTeX 5/5, sin fallas ni pasajes faltantes o añadidos). Únicos avisos: números. 32 números del .md 'ausentes' del PDF y 60 del PDF 'ausentes' del .md: todos se deben al punto medio decimal impreso (la capa OCR lo lee com |
+| 2026-11-05 04:31 | Judex2010_MicroCT_Adiposity_Rodents | qc | PASS completo cob 0.9972 prec 0.9965 |
+| 2026-11-05 04:31 | Judex2010_MicroCT_Adiposity_Rodents | done COMPLETO | QC PASS completo (pdf2md_tools 1.3-cloud): cob 0.9972, prec 0.9965, figuras 4/4 (nativas), tablas 0/0, ecuaciones 0/0, KaTeX 6/6, sin fallas ni avisos ni pasajes faltantes o añadidos. Manuscrito de autor NIH (PMC): rótulo NIH-PA y recuadro de cabecera registrados en el marcador de la página 1. Encab |
