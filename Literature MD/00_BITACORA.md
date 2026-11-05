@@ -90,3 +90,7 @@
 | 2026-11-05 05:16 | Nixon2010_QMR_Evaluation_Rodents | qc | PASS completo cob 0.9996 prec 0.9988 |
 | 2026-11-05 05:19 | Nixon2010_QMR_Evaluation_Rodents | qc | PASS completo cob 0.9996 prec 0.9988 |
 | 2026-11-05 05:19 | Nixon2010_QMR_Evaluation_Rodents | done COMPLETO | qc PASS sin avisos (cob 0.9996, prec 0.9988, fig 3/3, tab 3/2: la tercera tabla del .md es la lista de abreviaturas en dos columnas). Tabla 2 apaisada: recorte girado 90° en sentido horario. |
+| 2026-11-05 05:20 | Novelli2007_AnthropometricalParameters_Rats | lock | Claude Code |
+| 2026-11-05 05:20 | Novelli2007_AnthropometricalParameters_Rats | prep | páginas 1-9 |
+| 2026-11-05 05:31 | Novelli2007_AnthropometricalParameters_Rats | qc | FALLA completo cob 0.9260 prec 0.9053 |
+| 2026-11-05 05:34 | Novelli2007_AnthropometricalParameters_Rats | done COMPLETO | [forzado] Cierre con --forzar ante FALLA por falso positivo comprobado (qc 1.3-cloud: cob 0.9260, prec 0.9053, fig 5/5, tab 3/3, ec 0/0, KaTeX 4/4; 0 pasajes faltantes, 0 añadidos, 0 números del .md ausentes del PDF). Causa: fuentes de símbolos con codificación propia en la capa (± como '7', = como  |
