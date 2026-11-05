@@ -32,3 +32,12 @@
 | 2026-11-05 03:05 | Feely2000_Chemical_vs_DXA_Rats | prep | páginas 1-13 |
 | 2026-11-05 03:14 | Feely2000_Chemical_vs_DXA_Rats | qc | PASS completo cob 0.9947 prec 0.9918 |
 | 2026-11-05 03:15 | Feely2000_Chemical_vs_DXA_Rats | done COMPLETO |  |
+| 2026-11-05 03:17 | Folch1957_TotalLipidesIsolation | lock | Claude Code |
+| 2026-11-05 03:17 | Folch1957_TotalLipidesIsolation | prep | páginas 1-13 |
+| 2026-11-05 03:28 | Folch1957_TotalLipidesIsolation | qc | FALLA completo cob 0.9242 prec 0.9250 |
+| 2026-11-05 03:29 | Bertin1998_DXA_Evaluation_Rats | qc | AVISO completo cob 0.9699 prec 0.9864 |
+| 2026-11-05 03:30 | Folch1957_TotalLipidesIsolation | qc | FALLA completo cob 0.9242 prec 0.9250 |
+| 2026-11-05 03:30 | Bertin1998_DXA_Evaluation_Rats | qc | AVISO completo cob 0.9699 prec 0.9864 |
+| 2026-11-05 03:30 | Bertin1998_DXA_Evaluation_Rats | qc | AVISO completo cob 0.9699 prec 0.9864 |
+| 2026-11-05 03:30 | Bertin1998_DXA_Evaluation_Rats | done COMPLETO | Qc con pdf2md_tools 1.3-cloud: AVISO (cob 0.9699, prec 0.9864, fig 4/4, tab 1/1, sin fallas ni pasajes faltantes o añadidos). Avisos justificados: la cobertura restante y los números ausentes vienen de fuentes de símbolos con codificación propia (−0.40, −0.63, −1.7, −30°C, 10⁻³, 103°C) y del sello b |
+| 2026-11-05 03:30 | Folch1957_TotalLipidesIsolation | done COMPLETO | [forzado] Cierre con --forzar ante FALLA por falso positivo comprobado (capa OCR). Cobertura 0.9242 y precisión 0.925 (umbral PASS de escaneados 0.90), sin pasajes faltantes. Los 3 pasajes 'añadidos' son texto impreso verificado con zoom a 600 dpi que la capa OCR no tiene o lee mal: última línea de  |
