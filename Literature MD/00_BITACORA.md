@@ -30,3 +30,5 @@
 | 2026-11-05 03:04 | Bertin1998_DXA_Evaluation_Rats | qc | AVISO completo cob 0.9699 prec 0.9864 |
 | 2026-11-05 03:05 | Feely2000_Chemical_vs_DXA_Rats | lock | Claude Code |
 | 2026-11-05 03:05 | Feely2000_Chemical_vs_DXA_Rats | prep | páginas 1-13 |
+| 2026-11-05 03:14 | Feely2000_Chemical_vs_DXA_Rats | qc | PASS completo cob 0.9947 prec 0.9918 |
+| 2026-11-05 03:15 | Feely2000_Chemical_vs_DXA_Rats | done COMPLETO |  |
