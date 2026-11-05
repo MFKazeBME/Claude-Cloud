@@ -70,3 +70,8 @@
 | 2026-11-05 04:31 | Judex2010_MicroCT_Adiposity_Rodents | qc | PASS completo cob 0.9972 prec 0.9965 |
 | 2026-11-05 04:31 | Judex2010_MicroCT_Adiposity_Rodents | done COMPLETO | QC PASS completo (pdf2md_tools 1.3-cloud): cob 0.9972, prec 0.9965, figuras 4/4 (nativas), tablas 0/0, ecuaciones 0/0, KaTeX 6/6, sin fallas ni avisos ni pasajes faltantes o añadidos. Manuscrito de autor NIH (PMC): rótulo NIH-PA y recuadro de cabecera registrados en el marcador de la página 1. Encab |
 | 2026-11-05 04:31 | Kunnecke2004_MR_Relaxometry_MiceRats | done COMPLETO | [forzado] QC completo (pdf2md_tools 1.3-cloud): cob 0.9894, prec 0.9923, tablas 2/2, ecuaciones 13/13, KaTeX 89/89 sin error. FALLA unica = falso positivo comprobado: 1 pasaje faltante (p6, 12 palabras 'water grams inst 1h water swater fat grams inst 1h fat sfat') son las ecuaciones 9 y 10, presente |
+| 2026-11-05 04:32 | Lee1929_SurfaceAreaWhiteRat | lock | Claude Code |
+| 2026-11-05 04:33 | Lee1929_SurfaceAreaWhiteRat | prep | páginas 1-10 |
+| 2026-11-05 04:45 | Lee1929_SurfaceAreaWhiteRat | qc | AVISO completo cob 0.9749 prec 0.9607 |
+| 2026-11-05 04:46 | Lee1929_SurfaceAreaWhiteRat | qc | AVISO completo cob 0.9749 prec 0.9607 |
+| 2026-11-05 04:46 | Lee1929_SurfaceAreaWhiteRat | done COMPLETO | AVISO justificado (qc 1.3-cloud completo: cob 0.9749, prec 0.9607, figuras 1/1, tablas 1/0 por no detectar la etiqueta en la capa OCR, ecuaciones 4/3 por no detectar (1) en la capa, KaTeX 11/11, sin fallas ni pasajes faltantes o añadidos). Únicos avisos: números, todos por errores de la capa OCR ver |
