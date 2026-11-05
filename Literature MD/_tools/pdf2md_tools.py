@@ -17,7 +17,7 @@ import zipfile
 from collections import Counter
 from pathlib import Path
 
-TOOL_VERSION = "1.0-cloud"
+TOOL_VERSION = "1.1-cloud"
 TOOL_DIR = Path(__file__).resolve().parent
 MD_ROOT = TOOL_DIR.parent
 HOME_BASE = MD_ROOT.parent
@@ -276,6 +276,46 @@ def cmd_unlock(args):
     emit({"ok": True, "id": args.id, "estado": row["estado"]})
 
 
+def line_text(line):
+    return "".join(s["text"] for s in line["spans"])
+
+
+def reading_lines(page):
+    width = page.rect.width
+    mid = width / 2
+    rows = []
+    for bno, block in enumerate(page.get_text("dict")["blocks"]):
+        for lno, line in enumerate(block.get("lines", [])):
+            if not line_text(line).strip():
+                continue
+            x0, y0, x1, y1 = line["bbox"]
+            lane = 0 if x1 <= mid + 0.02 * width else (1 if x0 >= mid - 0.02 * width else -1)
+            rows.append({"lane": lane, "y": y0, "line": line, "block": bno, "first": lno == 0})
+    if sum(r["lane"] == 0 for r in rows) < 5 or sum(r["lane"] == 1 for r in rows) < 5:
+        return rows
+    ordered, left, right = [], [], []
+    for row in sorted(rows, key=lambda r: (r["y"], r["line"]["bbox"][0])):
+        if row["lane"] == -1:
+            ordered += sorted(left, key=lambda r: r["y"]) + sorted(right, key=lambda r: r["y"]) + [row]
+            left, right = [], []
+        else:
+            (left if row["lane"] == 0 else right).append(row)
+    return ordered + sorted(left, key=lambda r: r["y"]) + sorted(right, key=lambda r: r["y"])
+
+
+def ordered_text(page):
+    return "\n".join(line_text(r["line"]) for r in reading_lines(page))
+
+
+def unmask(doc, xref, pix):
+    try:
+        if doc.xref_get_key(xref, "ImageMask")[1] == "true" and "1 0" not in doc.xref_get_key(xref, "Decode")[1]:
+            pix.invert_irect(pix.irect)
+    except Exception:
+        pass
+    return pix
+
+
 def frac_box(rect, page):
     w, h = page.rect.width, page.rect.height
     return [round(max(0, rect[0]) / w, 4), round(max(0, rect[1]) / h, 4), round(min(w, rect[2]) / w, 4),
@@ -430,16 +470,26 @@ def graphic_regions(page, pm):
 
 
 def caption_hits(page):
-    hits = []
-    for block in page.get_text("dict")["blocks"]:
-        if block["type"] != 0 or not block["lines"]:
+    hits, seen = [], set()
+    rows = reading_lines(page)
+    for i, row in enumerate(rows):
+        text = line_text(row["line"]).strip()
+        if re.fullmatch(r"(?i)(fig(?:ure)?s?\.?|table|tab\.)", text) and i + 1 < len(rows):
+            text = text + " " + line_text(rows[i + 1]["line"]).strip()
+        m = CAPTION_RX.match(text)
+        if not m:
             continue
-        first = "".join(s["text"] for s in block["lines"][0]["spans"]).strip()
-        m = CAPTION_RX.match(first)
-        if m:
-            kind = "tabla" if m.group(1).lower().startswith("tab") else "figura"
-            hits.append({"tipo": kind, "etiqueta": f"{m.group(1)} {m.group(2)}".strip(), "num": m.group(2).lower(),
-                         "texto": first[:90], "bbox": list(block["bbox"])})
+        spans = [s for s in row["line"]["spans"] if s["text"].strip()]
+        lead_bold = bool(spans) and (bool(spans[0]["flags"] & 16) or "bold" in spans[0]["font"].lower())
+        if not (row["first"] or lead_bold or m.group(1).isupper()):
+            continue
+        kind = "tabla" if m.group(1).lower().startswith("tab") else "figura"
+        key = (kind, m.group(2).lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        hits.append({"tipo": kind, "etiqueta": f"{m.group(1)} {m.group(2)}".strip(), "num": m.group(2).lower(),
+                     "texto": text[:90], "bbox": list(row["line"]["bbox"])})
     return hits
 
 
@@ -539,7 +589,7 @@ def cmd_prep(args):
             if xref and xref not in seen:
                 seen.add(xref)
                 try:
-                    save_pixmap(pm.Pixmap(doc, xref), shop / "emb" / f"p{n:03d}_x{xref}.png", pm)
+                    save_pixmap(unmask(doc, xref, pm.Pixmap(doc, xref)), shop / "emb" / f"p{n:03d}_x{xref}.png", pm)
                 except Exception as exc:
                     pics[-1]["error_extraccion"] = str(exc)[:120]
         if args.ocr:
@@ -657,7 +707,7 @@ def cmd_native(args):
     if target.exists() and not args.reemplazar:
         emit({"ok": False, "mensaje": f"ya existe {target}; usa --reemplazar"}, 2)
     target.parent.mkdir(parents=True, exist_ok=True)
-    pix = pm.Pixmap(doc, args.xref)
+    pix = unmask(doc, args.xref, pm.Pixmap(doc, args.xref))
     smask = next((im[1] for page in doc for im in page.get_images(full=True) if im[0] == args.xref and im[1]), 0)
     if smask:
         try:
@@ -702,9 +752,12 @@ def inline_math_plain(text):
 
 
 def tokens_of(text):
-    t = unicodedata.normalize("NFKC", text)
+    t = re.sub(r"(?<=[^\W\d_])[\u00b4\u0060\u00a8\u02c6\u02dc\u00b8\u02d8\u02c7\u02d9\u02da\u02dd] ?(?=[^\W\d_])", "", text)
+    t = unicodedata.normalize("NFKC", t)
     t = t.replace("\u2212", "-").replace("\u2010", "-").replace("\u2011", "-").replace("\u00ad", "")
     t = t.lower()
+    t = re.sub(r"[\u00b4\u0060\u00a8\u02c6\u02dc\u00b8\u02d8\u02c7\u02d9\u02da\u02dd]", "", t)
+    t = "".join(c for c in unicodedata.normalize("NFD", t) if unicodedata.category(c) != "Mn")
     t = re.sub(r"(?<=[^\W_])[-¬][ \t]*\n[ \t]*(?=[^\W_])", "", t)
     t = re.sub(r"(?<=[^\W\d_])-+(?=[^\W\d_])", "", t)
     return re.findall(r"[^\W_]+", t)
@@ -886,7 +939,7 @@ def cmd_qc(args):
     md_bank = gram_bank(full_stream, n)
     pdf_lines, pdf_labels, pdf_all_lines = [], [], []
     for p in range(a, b + 1):
-        for line in doc[p - 1].get_text("text").split("\n"):
+        for line in ordered_text(doc[p - 1]).split("\n"):
             if proseish(line):
                 pdf_lines.append(line)
                 pdf_labels.append(f"p{p}")
@@ -895,7 +948,7 @@ def cmd_qc(args):
     for p in range(lo, hi + 1):
         page = doc[p - 1]
         text = page.get_text("text")
-        pdf_all_lines.extend(text.split("\n"))
+        pdf_all_lines.extend(ordered_text(page).split("\n"))
         pdf_numbers |= number_set(text)
         for blk in page.get_text("dict")["blocks"]:
             for line in blk.get("lines", []):
@@ -949,7 +1002,7 @@ def cmd_qc(args):
     md_lines = segment.split("\n")
     md_caps = {}
     for i, line in enumerate(md_lines):
-        clean = re.sub(r"^[\s>*_]+", "", line)
+        clean = re.sub(r"[*_]", "", line).lstrip(" >\t")
         m = CAPTION_RX.match(clean)
         if m and (i == 0 or not md_lines[i - 1].strip()):
             kind = "tabla" if m.group(1).lower().startswith("tab") else "figura"
