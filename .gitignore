@@ -1,0 +1,5 @@
+Literature/
+Literature MD/_trabajo/
+Literature MD/_tools/node_modules/
+__pycache__/
+*.tmp

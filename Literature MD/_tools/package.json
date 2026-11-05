@@ -1,0 +1,7 @@
+{
+  "name": "pdf2md-tools",
+  "private": true,
+  "dependencies": {
+    "katex": "0.16.11"
+  }
+}
