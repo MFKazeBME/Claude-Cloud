@@ -20,3 +20,5 @@
 | 2026-11-05 02:50 | Bernardis1968_LeeIndex_CarcassFat | qc | AVISO completo cob 0.9819 prec 0.9773 |
 | 2026-11-05 02:50 | Bertin1998_DXA_Evaluation_Rats | qc | AVISO completo cob 0.9715 prec 0.9896 |
 | 2026-11-05 02:50 | Bertin1998_DXA_Evaluation_Rats | done COMPLETO | Re-qc con pdf2md_tools 1.1-cloud: AVISO (cob 0.9715, prec 0.9896, sin pasajes faltantes ni añadidos). Avisos justificados: cobertura restante y números ausentes por fuentes de símbolos con codificación propia (−0.40, −0.63, −1.7, −30°C, 10⁻³, 103°C) y por el sello blanco invisible al pie (07, 14, 23 |
+| 2026-11-05 02:51 | Bland1986_AgreementTwoMethods | lock | Claude Code |
+| 2026-11-05 02:51 | Bland1986_AgreementTwoMethods | prep | páginas 1-4 |
