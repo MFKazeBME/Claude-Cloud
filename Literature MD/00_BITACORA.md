@@ -106,3 +106,5 @@
 | 2026-11-05 06:02 | Novelli2007_AnthropometricalParameters_Rats | qc | FALLA completo cob 0.9260 prec 0.9053 |
 | 2026-11-05 06:02 | Novelli2007_AnthropometricalParameters_Rats | qc | FALLA completo cob 0.9260 prec 0.9053 |
 | 2026-11-05 06:02 | Novelli2007_AnthropometricalParameters_Rats | done COMPLETO | [forzado] Cierre con --forzar ante FALLA por falso positivo comprobado (qc 1.3-cloud: cob 0.9260, prec 0.9053, fig 5/5, tab 3/3, ec 0/0, KaTeX 4/4; 0 pasajes faltantes, 0 añadidos, 0 números del .md ausentes del PDF). Causa: fuentes de símbolos con codificación propia en la capa (± como '7', = como  |
+| 2026-11-05 06:04 | Taicher2003_QMR_BodyComposition | qc | PASS completo cob 0.9996 prec 0.9997 |
+| 2026-11-05 06:05 | Taicher2003_QMR_BodyComposition | done COMPLETO | qc PASS sin avisos (1.3-cloud: cob 0.9996, prec 0.9997, fig 9/9, tab 3/3, ec 0/0, KaTeX 17/17). Figuras 1-9 como imágenes nativas (máscaras CCITT de 1 bit); native las deja invertidas porque invert_irect se ignora en pixmaps de máscara (aviso 'ignored for stencil pixmap'): se invirtió la polaridad d |
