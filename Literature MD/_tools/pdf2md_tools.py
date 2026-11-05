@@ -15,9 +15,15 @@ import sys
 import unicodedata
 import zipfile
 from collections import Counter
+from contextlib import contextmanager
 from pathlib import Path
 
-TOOL_VERSION = "1.2-cloud"
+try:
+    import fcntl
+except ImportError:
+    fcntl = None
+
+TOOL_VERSION = "1.3-cloud"
 TOOL_DIR = Path(__file__).resolve().parent
 MD_ROOT = TOOL_DIR.parent
 HOME_BASE = MD_ROOT.parent
@@ -70,6 +76,19 @@ def sha12(path):
         for chunk in iter(lambda: fh.read(1 << 20), b""):
             digest.update(chunk)
     return digest.hexdigest()[:12]
+
+
+@contextmanager
+def ledger_guard():
+    MD_ROOT.mkdir(exist_ok=True)
+    with open(MD_ROOT / ".checkpoint.lock", "w") as handle:
+        if fcntl:
+            fcntl.flock(handle, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            if fcntl:
+                fcntl.flock(handle, fcntl.LOCK_UN)
 
 
 def load_ledger():
@@ -1192,4 +1211,8 @@ def build_cli():
 
 if __name__ == "__main__":
     parsed = build_cli().parse_args()
-    parsed.fn(parsed)
+    if parsed.cmd in ("sync", "lock", "unlock", "done"):
+        with ledger_guard():
+            parsed.fn(parsed)
+    else:
+        parsed.fn(parsed)
