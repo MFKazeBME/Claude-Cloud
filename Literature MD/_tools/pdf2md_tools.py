@@ -17,7 +17,7 @@ import zipfile
 from collections import Counter
 from pathlib import Path
 
-TOOL_VERSION = "1.1-cloud"
+TOOL_VERSION = "1.2-cloud"
 TOOL_DIR = Path(__file__).resolve().parent
 MD_ROOT = TOOL_DIR.parent
 HOME_BASE = MD_ROOT.parent
@@ -744,7 +744,7 @@ def latex_plain(tex):
     tex = re.sub(r"\\tag\{[^}]*\}", " ", tex)
     tex = re.sub(r"\\([A-Za-z]+)", lambda m: GREEK.get(m.group(1), " "), tex)
     tex = re.sub(r"\\(.)", r"\1", tex)
-    return tex.replace("^", "").replace("_", "").replace("{", "").replace("}", "")
+    return tex.replace("^", " ").replace("_", "").replace("{", "").replace("}", "")
 
 
 def inline_math_plain(text):
@@ -979,7 +979,7 @@ def cmd_qc(args):
         prose_nums |= number_set(line)
     stray = sorted(prose_nums - pdf_numbers, key=natural_key)
     if stray:
-        (warnings if scanned else faults).append(f"números del .md que no están en el PDF: {stray[:40]}")
+        (warnings if scanned else faults).append(f"números del .md que no están en el PDF ({len(stray)}): {stray[:200]}")
     md_numbers = set()
     for chunk in every_md:
         md_numbers |= number_set(chunk)
@@ -988,7 +988,7 @@ def cmd_qc(args):
         pdf_core_numbers |= number_set(doc[p - 1].get_text("text"))
     absent = sorted(pdf_core_numbers - md_numbers, key=natural_key)
     if absent:
-        warnings.append(f"números del PDF ausentes en el .md: {absent[:60]}")
+        warnings.append(f"números del PDF ausentes en el .md ({len(absent)}): {absent[:200]}")
     for target in re.findall(r"!\[[^\]]*\]\(([^)\s]+)", segment) + re.findall(r"<img[^>]+src=\"([^\"]+)\"", segment):
         if not (md_file.parent / target).exists():
             faults.append(f"imagen rota: {target}")

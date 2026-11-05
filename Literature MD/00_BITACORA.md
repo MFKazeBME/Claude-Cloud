@@ -22,3 +22,9 @@
 | 2026-11-05 02:50 | Bertin1998_DXA_Evaluation_Rats | done COMPLETO | Re-qc con pdf2md_tools 1.1-cloud: AVISO (cob 0.9715, prec 0.9896, sin pasajes faltantes ni añadidos). Avisos justificados: cobertura restante y números ausentes por fuentes de símbolos con codificación propia (−0.40, −0.63, −1.7, −30°C, 10⁻³, 103°C) y por el sello blanco invisible al pie (07, 14, 23 |
 | 2026-11-05 02:51 | Bland1986_AgreementTwoMethods | lock | Claude Code |
 | 2026-11-05 02:51 | Bland1986_AgreementTwoMethods | prep | páginas 1-4 |
+| 2026-11-05 03:01 | Bland1986_AgreementTwoMethods | qc | AVISO completo cob 0.9804 prec 0.9592 |
+| 2026-11-05 03:03 | Bland1986_AgreementTwoMethods | qc | AVISO completo cob 0.9804 prec 0.9592 |
+| 2026-11-05 03:03 | Bland1986_AgreementTwoMethods | qc | AVISO completo cob 0.9804 prec 0.9592 |
+| 2026-11-05 03:03 | Bland1986_AgreementTwoMethods | done COMPLETO | AVISO justificado (cob 0.9804, prec 0.9592, sin pasajes faltantes ni añadidos, KaTeX 24/24). Números del MD ausentes en el PDF: las 63 celdas de la tabla (la capa OCR no contiene la tabla; verificadas a 400 dpi), '001' (capa 'O. 00 I' por 0·001), '21' y '33' (capa lee 21.6 y 33.2 como decimales; imp |
+| 2026-11-05 03:04 | Bernardis1968_LeeIndex_CarcassFat | qc | AVISO completo cob 0.9819 prec 0.9773 |
+| 2026-11-05 03:04 | Bertin1998_DXA_Evaluation_Rats | qc | AVISO completo cob 0.9699 prec 0.9864 |
